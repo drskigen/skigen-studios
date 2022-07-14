@@ -72,3 +72,7 @@ public
 # System files
 .DS_Store
 Thumbs.db
+
+# Lock files
+package-lock.json
+yarn.lock
