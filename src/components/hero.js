@@ -1,21 +1,19 @@
 import React from 'react'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
+import Button from './button'
 import * as styles from './hero.module.css'
 
-const Hero = ({ image, title, content }) => (
-  <div className={styles.hero}>
-    {image && (
-      <GatsbyImage className={styles.image} alt={title} image={image} />
-    )}
-    <div className={styles.details}>
-      <h1 className={styles.title}>{title}</h1>
-      {content && (
-        <div className={styles.content}>{renderRichText(content)}</div>
-      )}
+const Hero = () => {
+  return (
+    <div>
+      <h1>Skigen Studios</h1>
+      <h2 className={styles.valueProp}>
+        Lorem ispum dolor sit amet, consectetur adipiscing elit
+      </h2>
+      <p>Skigen Studios is ispum dolor sit amet, consectetur adipiscing elit</p>
+      <Button link="#">Contact Us</Button>
     </div>
-  </div>
-)
+  )
+}
 
 export default Hero

@@ -3,13 +3,5 @@
   "description": "Skigen Studios Gatsby & Contentful portfolio website.",
   "keywords": ["contentful", "gatsby"],
   "repository": "https://github.com/drskigen/skigen-studios",
-  "success_url": "/",
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    },
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-static"
-    }
-  ]
+  "success_url": "/"
 }

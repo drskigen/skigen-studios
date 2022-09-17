@@ -1,0 +1,85 @@
+.btn {
+  --offset: 0.3125rem;
+  --border-size: 0.0625rem;
+  --btn-hover: rgba(11, 96, 125, 0.1);
+
+  position: relative;
+  background: transparent;
+  font-family: var(--font-sans-cond);
+  font-size: 18px;
+  font-weight: var(--semibold);
+  line-height: var(--lh-btn);
+  color: var(--primary);
+  text-transform: uppercase;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+  cursor: pointer;
+  transition: background 0.8s ease;
+  padding: 0.875rem 1.125rem;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--btn-hover);
+}
+
+.btnHorizontal,
+.btnVertical {
+  display: block;
+  position: absolute;
+  transition: transform 0.8s ease;
+  will-change: transform;
+}
+
+.btnHorizontal::before,
+.btnVertical::before {
+  content: '';
+  position: absolute;
+  border: inherit;
+}
+
+.btnHorizontal {
+  --vertical-offset: calc(var(--offset) * -1);
+
+  top: 0;
+  bottom: 0;
+  right: var(--vertical-offset, 0);
+  left: var(--vertical-offset, 0);
+  border-top: var(--border-size) solid currentcolor;
+  border-bottom: var(--border-size) solid currentcolor;
+}
+
+.btnHorizontal::before {
+  top: calc(var(--vertical-offset) - var(--border-size));
+  bottom: calc(var(--vertical-offset) - var(--border-size));
+  left: calc(var(--vertical-offset) * -1);
+  right: calc(var(--vertical-offset) * -1);
+}
+
+.btn:hover .btnHorizontal,
+.btn:focus .btnHorizontal {
+  transform: scaleX(0);
+}
+
+.btnVertical {
+  --horizontal-offset: calc(var(--offset) * -1);
+
+  right: 0;
+  left: 0;
+  top: var(--horizontal-offset, 0);
+  bottom: var(--horizontal-offset, 0);
+  border-left: var(--border-size) solid currentcolor;
+  border-right: var(--border-size) solid currentcolor;
+}
+
+.btnVertical::before {
+  top: calc(var(--horizontal-offset) * -1);
+  bottom: calc(var(--horizontal-offset) * -1);
+  left: calc(var(--horizontal-offset) - var(--border-size));
+  right: calc(var(--horizontal-offset) - var(--border-size));
+}
+
+.btn:hover .btnVertical,
+.btn:focus .btnHorizontal {
+  transform: scaleY(0);
+}

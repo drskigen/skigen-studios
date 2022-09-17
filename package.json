@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "author": "Patric Skigen <skigenstudios@gmail.com>",
   "bugs": {
-    "url": "https://github.com/contentful/starter-gatsby-blog/issues"
+    "url": "https://skigenstudios.gatsbyjs.io/"
   },
   "dependencies": {
     "@contentful/rich-text-plain-text-renderer": "^15.12.1",
@@ -16,7 +16,6 @@
     "gatsby-source-contentful": "^7.0.0",
     "gatsby-transformer-sharp": "^4.0.0",
     "gh-pages": "^3.1.0",
-    "lodash": "^4.17.21",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
@@ -32,23 +31,17 @@
   "homepage": "https://github.com/contentful/starter-gatsby-blog#readme",
   "keywords": [
     "gatsby",
-    "contentful",
-    "starter"
+    "contentful"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/contentful/starter-gatsby-blog.git"
+    "url": "git+https://github.com/drskigen/skigen-studios.git"
   },
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
-    "heroku-postbuild": "gatsby build",
-    "serve": "gatsby serve",
-    "postinstall": "node ./bin/hello.js",
-    "setup": "node ./bin/setup.js",
-    "netlify:login": "netlify login",
-    "netlify:deploy": "netlify deploy -d public -p"
+    "serve": "gatsby serve"
   }
 }

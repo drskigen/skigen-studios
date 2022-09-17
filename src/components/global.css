@@ -1,54 +1,128 @@
+/* Sans Regular */
 @font-face {
-  font-family: 'Inter var';
-  font-weight: 100 900;
+  font-family: 'IBM Plex Sans';
+  font-weight: 400;
   font-display: swap;
   font-style: normal;
   font-named-instance: 'Regular';
-  src: url('/fonts/Inter-roman.var.woff2?v=3.19') format('woff2');
+  src: url('/fonts/IBMPlexSans-Regular?v=1.0.0') format('truetype');
 }
 
+/* Sans Italic */
 @font-face {
-  font-family: 'Inter var';
-  font-weight: 100 900;
+  font-family: 'IBM Plex Sans';
+  font-weight: 400;
   font-display: swap;
   font-style: italic;
-  font-named-instance: 'Italic';
-  src: url('/fonts/Inter-italic.var.woff2?v=3.19') format('woff2');
+  font-named-instance: 'Regular';
+  src: url('/fonts/IBMPlexSans-Italic?v=1.0.0') format('truetype');
+}
+
+/* Sans Bold */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: 'Regular';
+  src: url('/fonts/IBMPlexSans-Bold?v=1.0.0') format('truetype');
+}
+
+/* Sans Cond Italic */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: 'Regular';
+  src: url('/fonts/IBMPlexSansCondensed-Italic?v=1.0.0') format('truetype');
+}
+
+/* Sans Cond Semibold */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url('/fonts/IBMPlexSansCondensed-SemiBold?v=1.0.0') format('truetype');
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-html * {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--text-color);
+  background: var(--white);
+  color: var(--black);
   font-family: var(--font-sans);
   font-size: 16px;
-  font-weight: var(--body);
-  line-height: var(--default);
+  font-weight: var(--regular);
+  line-height: var(--lh-default);
   margin: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
 img {
-  display: block;
   width: 100%;
+  height: auto;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h1);
+  font-weight: var(--bold);
+  line-height: var(--lh-h1);
+}
+
+h2 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h2);
+  font-weight: var(--bold);
+  line-height: var(--lh-h2);
+}
+
+h3 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h3);
+  font-weight: var(--bold);
+  line-height: var(--lh-h3);
+}
+
+h4 {
+  font-family: var(--font-sans-cond);
+  font-size: var(--fs-h4);
   font-weight: var(--semibold);
-  line-height: var(--dense);
+  line-height: var(--lh-h4);
+}
+
+h5 {
+  font-family: var(--font-sans-cond);
+  font-size: var(--fs-h5);
+  font-weight: var(--semibold);
+  line-height: var(--lh-h5);
+}
+
+h6 {
+  font-family: var(--font-sans-cond);
+  font-size: var(--fs-h6);
+  font-weight: var(--regular);
+  line-height: var(--lh-h6);
+  font-style: italic;
+}
+
+p {
+  font-family: var(--font-sans);
+  font-size: var(--fs-p);
+  font-weight: var(--regular);
+  line-height: var(--lh-p);
 }
 
 a {
@@ -60,42 +134,9 @@ a:hover {
   color: var(--primary);
 }
 
-a.active {
-  font-weight: var(--bold);
-}
-
-tt,
-code,
-kbd {
-  background: var(--black-fade-5);
-  padding-bottom: 0.2em;
-  padding-top: 0.2em;
-}
-
-tt,
-code,
-kbd {
-  font-family: var(--font-monospace);
-  font-size: 90%;
-}
-
-tt,
-code {
-  background-color: var(--black-fade-5);
-  border-radius: var(--radius-sm);
-  font-weight: var(--medium);
-  padding: 0.2em 0;
-}
-
-code:before,
-code:after,
-tt:before,
-tt:after {
-  content: ' ';
-  letter-spacing: -0.2em;
-}
-
-pre,
-code {
-  font-family: var(--font-monospace);
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
 }
