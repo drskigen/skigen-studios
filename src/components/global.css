@@ -4,8 +4,7 @@
   font-weight: 400;
   font-display: swap;
   font-style: normal;
-  font-named-instance: 'Regular';
-  src: url('/fonts/IBMPlexSans-Regular?v=1.0.0') format('truetype');
+  src: url('/fonts/IBMPlexSans-Regular.ttf?v=1.0.0') format('truetype');
 }
 
 /* Sans Italic */
@@ -14,8 +13,7 @@
   font-weight: 400;
   font-display: swap;
   font-style: italic;
-  font-named-instance: 'Regular';
-  src: url('/fonts/IBMPlexSans-Italic?v=1.0.0') format('truetype');
+  src: url('/fonts/IBMPlexSans-Italic.ttf?v=1.0.0') format('truetype');
 }
 
 /* Sans Bold */
@@ -23,9 +21,8 @@
   font-family: 'IBM Plex Sans';
   font-weight: 700;
   font-display: swap;
-  font-style: italic;
-  font-named-instance: 'Regular';
-  src: url('/fonts/IBMPlexSans-Bold?v=1.0.0') format('truetype');
+  font-style: normal;
+  src: url('/fonts/IBMPlexSans-Bold.ttf?v=1.0.0') format('truetype');
 }
 
 /* Sans Cond Italic */
@@ -34,22 +31,31 @@
   font-weight: 400;
   font-display: swap;
   font-style: italic;
-  font-named-instance: 'Regular';
-  src: url('/fonts/IBMPlexSansCondensed-Italic?v=1.0.0') format('truetype');
+  src: url('/fonts/IBMPlexSansCondensed-Italic.ttf?v=1.0.0') format('truetype');
 }
 
 /* Sans Cond Semibold */
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'IBM Plex Sans Condensed';
   font-weight: 600;
   font-display: swap;
   font-style: normal;
-  font-named-instance: 'Regular';
-  src: url('/fonts/IBMPlexSansCondensed-SemiBold?v=1.0.0') format('truetype');
+  src: url('/fonts/IBMPlexSansCondensed-SemiBold.ttf?v=1.0.0')
+    format('truetype');
+}
+
+/* Sans Cond Bold */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  src: url('/fonts/IBMPlexSansCondensed-Bold.ttf?v=1.0.0') format('truetype');
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 *,
@@ -90,7 +96,7 @@ h2 {
 }
 
 h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-sans-cond);
   font-size: var(--fs-h3);
   font-weight: var(--bold);
   line-height: var(--lh-h3);
@@ -139,4 +145,15 @@ button {
   -webkit-appearance: none;
   background: transparent;
   border: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

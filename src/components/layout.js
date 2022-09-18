@@ -1,15 +1,15 @@
 import React from 'react'
 
+import Seo from './seo'
+import Nav from './nav'
 import './variables.css'
 import './global.css'
-import Seo from './seo'
-import Hero from '../components/hero'
 
 const Template = ({ children }) => {
   return (
     <>
       <Seo />
-      <Hero />
+      <Nav />
       <main>{children}</main>
     </>
   )

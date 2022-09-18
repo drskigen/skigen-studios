@@ -7,8 +7,8 @@ const Button = ({ children, link, target }) => {
 
   return (
     <button className={styles.btn} href={link} target={linkTarget}>
-      {children}
       <span className={styles.btnHorizontal}></span>
+      {children}
       <span className={styles.btnVertical}></span>
     </button>
   )

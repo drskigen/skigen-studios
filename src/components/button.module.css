@@ -1,33 +1,38 @@
 .btn {
   --offset: 0.3125rem;
   --border-size: 0.0625rem;
-  --btn-hover: rgba(11, 96, 125, 0.1);
+  --hover: rgba(11, 96, 125, 0.1);
+  --font-size: 0.875rem;
+  --line-height: 1rem;
+  --padding: 0.9375rem 1rem;
 
   position: relative;
+  outline: 0;
   background: transparent;
   font-family: var(--font-sans-cond);
   font-size: 18px;
   font-weight: var(--semibold);
-  line-height: var(--lh-btn);
+  line-height: var(--line-height);
   color: var(--primary);
   text-transform: uppercase;
   border-radius: 0;
   box-shadow: inset 0 0 0 var(--border-size) currentcolor;
   cursor: pointer;
-  transition: background 0.8s ease;
-  padding: 0.875rem 1.125rem;
+  transition: background 0.7s ease;
+  padding: var(--padding);
+  margin-left: var(--offset);
 }
 
 .btn:hover,
 .btn:focus {
-  background: var(--btn-hover);
+  background: var(--hover);
 }
 
 .btnHorizontal,
 .btnVertical {
   display: block;
   position: absolute;
-  transition: transform 0.8s ease;
+  transition: transform 0.7s ease;
   will-change: transform;
 }
 
@@ -80,6 +85,14 @@
 }
 
 .btn:hover .btnVertical,
-.btn:focus .btnHorizontal {
+.btn:focus .btnVertical {
   transform: scaleY(0);
+}
+
+@media (min-width: 48em) {
+  .btn {
+    --font-size: 1.125rem;
+    --line-height: 1.125rem;
+    --padding: 0.875rem 1.125rem;
+  }
 }
