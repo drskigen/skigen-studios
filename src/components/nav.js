@@ -54,16 +54,19 @@ const Nav = () => {
       return
     }
 
-    const animDur = getComputedStyle(e.currentTarget).getPropertyValue(
+    const delay = getComputedStyle(e.currentTarget).getPropertyValue(
+      '--delay'
+    ) || 400;
+    const animation = getComputedStyle(e.currentTarget).getPropertyValue(
       '--animation'
-    )
+    ) || 1000;
+    const animDur = parseInt(delay) + parseInt(animation);
 
     if (navState === 'closed') {
       setnavState('animIn')
       setTimeout(() => {
         setnavState('open')
       }, animDur)
-      console.log(animDur)
     } else if (navState === 'open') {
       setnavState('animOut')
       setTimeout(() => {
