@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Seo from './seo'
-import Nav from './nav'
+import NavBar from './navbar'
 import './variables.css'
 import './global.css'
 
@@ -9,7 +9,7 @@ const Template = ({ children }) => {
   return (
     <>
       <Seo />
-      <Nav />
+      <NavBar />
       <main>{children}</main>
     </>
   )

@@ -1,0 +1,209 @@
+/* Body */
+.bodyNavOpen {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Navbar */
+.navBar {
+  position: absolute;
+  z-index: var(--lvl-3);
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+}
+
+.burgerContainer {
+}
+
+/* Hamburger Button */
+@keyframes burgerTopIn {
+  0% {
+    top: 0;
+  }
+  30% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+    transform: rotate(45deg) translate(-50%, -50%);
+  }
+}
+
+@keyframes burgerTopOut {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: rotate(45deg) translate(-50%, -50%);
+  }
+  30% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+}
+
+@keyframes burgerBottomIn {
+  0% {
+    top: calc(100% - var(--border));
+  }
+  30% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+    transform: rotate(-45deg) translate(-50%, -50%);
+  }
+}
+
+@keyframes burgerBottomOut {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: rotate(-45deg) translate(-50%, -50%);
+  }
+  30% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: calc(100% - var(--border));
+    left: 0;
+    transform: none;
+  }
+}
+
+.burger {
+  --border: 0.25rem;
+  --space: var(--space-md);
+  --width: 2.5rem;
+  --delay: 350ms;
+  --animation: 800ms;
+
+  position: relative;
+  display: block;
+  width: var(--width);
+  height: calc((var(--space) * 2) + (var(--border) * 3));
+}
+
+.burgerTopBun,
+.burgerMeat,
+.burgerBottomBun {
+  display: block;
+  position: absolute;
+  background-color: var(--c-black);
+  width: var(--width);
+  height: var(--border);
+  right: 0;
+  will-change: max-width, transform;
+  transition-property: max-width, transform;
+  transition-duration: var(--delay);
+  transition-timing-function: ease-in-out;
+}
+
+.burgerTopBun,
+.burgerBottomBun {
+  transform-origin: 0% 0%;
+}
+
+.burgerTopBun {
+  top: 0;
+  max-width: 67%;
+}
+
+.burgerMeat {
+  top: 50%;
+  max-width: var(--width);
+  transform: scale(1) translateY(-50%);
+  transform-origin: 50% 50%;
+}
+
+.burgerBottomBun {
+  top: calc(100% - var(--border));
+  max-width: 76%;
+}
+
+.burger:hover .burgerTopBun,
+.burger:hover .burgerMeat,
+.burger:hover .burgerBottomBun {
+  max-width: var(--width);
+}
+
+.burgerOpen .burgerTopBun,
+.burgerOpen .burgerBottomBun,
+.burgerAnimOut .burgerTopBun,
+.burgerAnimOut .burgerBottomBun {
+  max-width: var(--width);
+  top: 50%;
+  left: 50%;
+}
+
+.burgerOpen .burgerTopBun {
+  transform: rotate(45deg) translate(-50%, -50%);
+}
+
+.burgerOpen .burgerBottomBun {
+  transform: rotate(-45deg) translate(-50%, -50%);
+}
+
+.burgerAnimIn .burgerTopBun,
+.burgerAnimIn .burgerBottomBun,
+.burgerAnimOut .burgerTopBun,
+.burgerAnimOut .burgerBottomBun {
+  max-width: var(--width);
+  animation-duration: var(--animation);
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: var(--delay);
+}
+
+.burgerOpen .burgerMeat,
+.burgerAnimIn .burgerMeat,
+.burgerAnimOut .burgerMeat {
+  transform: scaleX(0) translateY(-50%);
+}
+
+.burgerAnimIn .burgerTopBun {
+  animation-name: burgerTopIn;
+}
+
+.burgerAnimIn .burgerBottomBun {
+  animation-name: burgerBottomIn;
+}
+
+.burgerAnimOut .burgerTopBun {
+  transform: rotate(45deg) translate(-50%, -50%);
+  animation-name: burgerTopOut;
+}
+
+.burgerAnimOut .burgerBottomBun {
+  transform: rotate(-45deg) translate(-50%, -50%);
+  animation-name: burgerBottomOut;
+}
+
+@media (min-width: 48em) {
+  .burger {
+    --border: 0.4375rem;
+    --space: var(--space-lg);
+    --width: 4.5rem;
+  }
+}

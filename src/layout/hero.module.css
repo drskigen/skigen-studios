@@ -1,3 +1,6 @@
+.hero {
+  background-color: var(--c-gray-light);
+}
 .valueProp {
   font-family: var(--font-san-cond);
   font-size: var(--fs-h3);

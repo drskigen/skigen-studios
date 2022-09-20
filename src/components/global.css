@@ -86,6 +86,7 @@ h1 {
   font-size: var(--fs-h1);
   font-weight: var(--bold);
   line-height: var(--lh-h1);
+  margin: var(--mg-h1);
 }
 
 h2 {
